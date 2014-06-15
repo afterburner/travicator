@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+def red(s)
+  "\e[1;31m#{s}\e[0m" unless %x[tput colors].to_i < 8
+end
+
+# Check for a properly reviewed Phabricator diff, but only when pushing to
+# master.
+$stdin.readlines.each do |line|
+  local_ref, local_sha, remote_ref, remote_sha = line.split(' ')
+  msg = `git cat-file commit #{local_sha}`
+  if remote_ref == "refs/heads/master" && !/^reviewed by: *\w+/i.match(msg)
+    puts "#{red("Error:")} This doesn't look like a properly reviewed commit. If it's been approved, run `arc amend` then try pushing again."
+    exit 1
+  end
+end
+
+# Carry on then...
+exit 0

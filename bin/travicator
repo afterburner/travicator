@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+# add self to libpath
+require "pathname"
+bin_file = Pathname.new(__FILE__).realpath
+$:.unshift File.expand_path("../../lib", bin_file)
+
+require "travicator/command"
+
+args = ARGV.dup
+ARGV.clear
+command = args.shift.strip rescue 'help'
+Travicator::Command.load
+Travicator::Command.run(command, args)

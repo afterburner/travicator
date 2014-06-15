@@ -1,0 +1,1 @@
+{"__symbol_cache_version__":11,"9c7a475accc83adb8c3ef0194588a67f":{"have":{"class":{"TravicatorArcanistConfiguration":13}},"need":{"class":{"ArcanistConfiguration":53,"ExecFuture":537},"class\/interface":{"ArcanistBaseWorkflow":178,"ArcanistDiffWorkflow":262}},"xmap":{"TravicatorArcanistConfiguration":["ArcanistConfiguration"]}}}

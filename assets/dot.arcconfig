@@ -1,0 +1,7 @@
+{
+  "phabricator.uri" : "",
+  "load" : [
+    "travicator/assets/arc"
+  ],
+  "arcanist_configuration" : "TravicatorArcanistConfiguration"
+}
