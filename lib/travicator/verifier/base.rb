@@ -1,7 +1,10 @@
-class Travicator::Verifier::Base
-  attr_reader :state
+require "travicator/verifier"
 
-  def init
-    @state = Verifier::UNKNOWN
+class Travicator::Verifier::Base
+  attr_reader :state, :error, :options
+
+  def initialize(options={})
+    @state = Travicator::Verifier::UNKNOWN
+    @options = options
   end
 end
