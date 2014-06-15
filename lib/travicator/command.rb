@@ -17,8 +17,8 @@ module Travicator
     end
 
     def self.load
-      # On loading this module, load all the commands, triggering them to
-      # be registered in the commands dictionary.
+      # Load all the commands, triggering them to  be registered in the
+      # commands dictionary.
       Dir[File.dirname(__FILE__) + '/command/*.rb'].each { |file| require file }
     end
 
