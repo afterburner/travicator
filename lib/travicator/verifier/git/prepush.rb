@@ -2,6 +2,8 @@ require "travicator"
 require "travicator/verifier/base"
 require "travicator/verifier/git/repo"
 
+require 'fileutils'
+
 module Travicator::Verifier::Git
     class PrePush < Travicator::Verifier::Base
     def self.options
