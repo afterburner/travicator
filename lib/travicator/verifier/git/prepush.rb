@@ -12,6 +12,10 @@ module Travicator::Verifier::Git
       [ Travicator::Verifier::Git::Repo ]
     end
 
+    def self.description
+      "[ git ] Looking for valid prepush git-hook"
+    end
+
     def run
       raise "Verifier can only be run once" unless @state == Travicator::Verifier::UNKNOWN
 

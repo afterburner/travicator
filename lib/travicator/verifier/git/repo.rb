@@ -6,6 +6,10 @@ module Travicator::Verifier::Git
       { :directory => Dir.pwd }
     end
 
+    def self.description
+      "[ git ] Checking for valid git repo"
+    end
+
     def run
       raise "Verifier can only be run once" unless @state == Travicator::Verifier::UNKNOWN
 

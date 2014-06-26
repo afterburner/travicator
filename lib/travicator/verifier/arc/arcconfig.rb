@@ -8,6 +8,10 @@ module Travicator::Verifier::Arc
       { :directory => Dir.pwd }
     end
 
+    def self.description
+      "[ arc ] Checking for .arcconfig"
+    end
+
     def run
       raise "Verifier can only be run once" unless @state == Travicator::Verifier::UNKNOWN
 

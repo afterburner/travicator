@@ -13,6 +13,10 @@ module Travicator::Verifier::Arc
       [ Travicator::Verifier::Arc::ArcConfig ]
     end
 
+    def self.description
+      "[ arc ] Verifying .arcconfig"
+    end
+
     def run
       raise "Verifier can only be run once" unless @state == Travicator::Verifier::UNKNOWN
 
