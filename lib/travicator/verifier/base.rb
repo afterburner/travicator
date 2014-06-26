@@ -7,4 +7,8 @@ class Travicator::Verifier::Base
     @state = Travicator::Verifier::UNKNOWN
     @options = options
   end
+
+  def self.deps
+    []
+  end
 end

@@ -10,7 +10,7 @@ module Travicator::Verifier::Arc
     end
 
     def self.deps
-      [ Travicator::Verifier::Arc::ArcConfig.class ]
+      [ Travicator::Verifier::Arc::ArcConfig ]
     end
 
     def run

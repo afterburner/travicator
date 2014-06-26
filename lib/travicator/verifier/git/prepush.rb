@@ -9,7 +9,7 @@ module Travicator::Verifier::Git
     end
 
     def self.deps
-      [ Travicator::Verifier::Git::Repo.class ]
+      [ Travicator::Verifier::Git::Repo ]
     end
 
     def run
