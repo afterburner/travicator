@@ -40,13 +40,14 @@ module Travicator::Verifier::Arc
 
       unless hash["phabricator.uri"] == options[:config]["phabricator.uri"]
         @state = Travicator::Verifier::FAILURE
-        @error = "phabricator.uri setting in .arcconfig doesn't match travicator config: expected '#{options[:config]["phabricator.uri"]}' instead of '#{hash["phabricator.uri"]}'."
+        @error = "phabricator.uri setting in .arcconfig doesn't match .travicator.yml config: expected '#{options[:config]["phabricator.uri"]}' instead of '#{hash["phabricator.uri"]}'."
         return
       end
 
-      unless hash["arcanist_configuration"] == "TravicatorArcanistConfiguration"
+      expected = "TravicatorArcanistConfiguration"
+      unless hash["arcanist_configuration"] == expected
         @state = Travicator::Verifier::FAILURE
-        @error = "arcanist_configuration setting in .arcconfig doesn't specify the proper php class config: expected TravicatorArcanistConfiguration instead of #{hash["arcanist_configuration"]}."
+        @error = "arcanist_configuration setting in .arcconfig doesn't specify the proper php class config: expected '#{expected}' instead of '#{hash["arcanist_configuration"]}'."
         return
       end
       
