@@ -40,7 +40,7 @@ module Travicator::Verifier::Arc
 
       unless hash["phabricator.uri"] == options[:config]["phabricator.uri"]
         @state = Travicator::Verifier::FAILURE
-        @error = "phabricator.uri setting in .arcconfig doesn't match travicator config: expected #{options[:config][:phabricator_uri]} instead of #{hash["phabricator.uri"]}."
+        @error = "phabricator.uri setting in .arcconfig doesn't match travicator config: expected '#{options[:config]["phabricator.uri"]}' instead of '#{hash["phabricator.uri"]}'."
         return
       end
 
