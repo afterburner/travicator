@@ -6,7 +6,7 @@ module Travicator::Verifier::Arc
   class ProperConfig < Travicator::Verifier::Base
     def self.options
       { :directory => Dir.pwd,
-        :config => Travicator.config }
+        :config => (Travicator.config rescue nil) }
     end
 
     def self.deps
@@ -19,6 +19,12 @@ module Travicator::Verifier::Arc
 
     def run
       raise "Verifier can only be run once" unless @state == Travicator::Verifier::UNKNOWN
+
+      unless options[:config]
+        @state = Travicator::Verifier::FAILURE
+        @error = "Couldn't find a .travicator.yml"
+        return
+      end
 
       @state = Travicator::Verifier::RUNNING
       # Check if options[:directory] contains an .arcconfig with the proper
