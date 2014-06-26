@@ -11,6 +11,11 @@ class Travicator::Verifier::Base
   def self.deps
     []
   end
+
+  def self.options
+    {}
+  end
+
   def self.description
     ""
   end
